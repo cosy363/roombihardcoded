@@ -3,15 +3,15 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, StyleSheet, Text, View, Image, navigation, TouchableOpacity } from 'react-native';
 
-import imagePath1 from './assets/furniture/침대.jpg';
-import imagePath2 from './assets/furniture/책상.jpg';
-import imagePath3 from './assets/furniture/의자.jpg';
-import imagePath4 from './assets/furniture/소파.jpg';
-import imagePath5 from './assets/furniture/수납장.jpg';
-import imagePath6 from './assets/furniture/선반.jpg';
-import imagePath7 from './assets/furniture/옷장.jpg';
-import imagePath8 from './assets/furniture/조명.jpg';
-import imagePath9 from './assets/furniture/러그.jpg';
+import imagePath1 from './assets/furniture/bed.jpg';
+import imagePath2 from './assets/furniture/desk.jpg';
+import imagePath3 from './assets/furniture/chair.jpg';
+import imagePath4 from './assets/furniture/sofa.jpg';
+import imagePath5 from './assets/furniture/cabinet.jpg';
+import imagePath6 from './assets/furniture/shelf.jpg';
+import imagePath7 from './assets/furniture/closet.jpg';
+import imagePath8 from './assets/furniture/light.jpg';
+import imagePath9 from './assets/furniture/rug.jpg';
 
 
 function MainScreen({navigation})  {

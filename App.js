@@ -19,6 +19,7 @@ import MypageScreen from './MypageScreen'; //7
 
 import RcmdScreen from './RcmdScreen'; //8
 import ResetScreen from './ResetScreen'; //9
+import SignupScreen from './signupScreen'; //10
 
 
 const Stack = createStackNavigator();
@@ -28,6 +29,11 @@ function App({navigation}){
     <NavigationContainer>
       <Stack.Navigator>
         <Stack.Screen name="login" component={LoginScreen}
+        options={{
+          headerShown:false,
+        }}
+        />
+        <Stack.Screen name="signup" component={SignupScreen}
         options={{
           headerShown:false,
         }}

@@ -3,13 +3,12 @@ import { useState } from 'react';
 import { Button, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'
 
-
-import natural from './assets/style/내추럴.png';
-import modern from './assets/style/모던.jpg';
-import romantic from './assets/style/로맨틱.jpg';
-import NEurope from './assets/style/북유럽.png';
-import junk from './assets/style/정크4.jpg';
-import minimal from './assets/style/미니멀.jpg';
+import natural from './assets/style/natural.png';
+import modern from './assets/style/modern.jpg';
+import romantic from './assets/style/romantic.jpg';
+import NEurope from './assets/style/NorthEurope.png'
+import junk from './assets/style/junk.jpg';
+import minimal from './assets/style/minimal.jpg';
 
 
 function MainScreen({navigation})  {

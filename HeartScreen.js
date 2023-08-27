@@ -6,30 +6,30 @@ import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons';
 
-import chair from './assets/heart/의자.webp';
+import chair from './assets/heart/chair.webp';
 
-import imagePath1 from './assets/heart/침대.jpg';
-import imagePath2 from './assets/heart/책상.jpg';
-import imagePath3 from './assets/heart/의자.jpg';
-import imagePath4 from './assets/heart/소파.jpg';
-import imagePath5 from './assets/heart/수납장.jpg';
-import imagePath6 from './assets/heart/선반.jpg';
-import imagePath7 from './assets/heart/옷장.jpg';
-import imagePath8 from './assets/heart/조명.jpg';
-import imagePath9 from './assets/heart/러그.jpg';
+import imagePath1 from './assets/heart/bed.jpg';
+import imagePath2 from './assets/heart/desk.jpg';
+import imagePath3 from './assets/heart/chair.jpg';
+import imagePath4 from './assets/heart/sofa.jpg';
+import imagePath5 from './assets/heart/cabinet.jpg';
+import imagePath6 from './assets/heart/shelf.jpg';
+import imagePath7 from './assets/heart/closet.jpg';
+import imagePath8 from './assets/heart/light.jpg';
+import imagePath9 from './assets/heart/rug.jpg';
 
-import imagePath1_1 from './assets/heart/1책상.jpg';
-import imagePath1_2 from './assets/heart/1스탠드.jpg';
-import imagePath1_3 from './assets/heart/1협탁.jpg';
+import imagePath1_1 from './assets/heart/1desk.jpg';
+import imagePath1_2 from './assets/heart/1light.jpg';
+import imagePath1_3 from './assets/heart/1sidetable.jpg';
 
-import imagePath2_1 from './assets/heart/2침대.jpg';
+import imagePath2_1 from './assets/heart/2bed.jpg';
 
-import imagePath3_1 from './assets/heart/3테이블.jpg';
-import imagePath3_2 from './assets/heart/3의자.jpg';
-import imagePath3_3 from './assets/heart/3스탠드.jpg';
-import imagePath3_4 from './assets/heart/3식물.jpg';
+import imagePath3_1 from './assets/heart/3table.jpg';
+import imagePath3_2 from './assets/heart/3chair.jpg';
+import imagePath3_3 from './assets/heart/3light.jpg';
+import imagePath3_4 from './assets/heart/3plant.jpg';
 
-import imagePath4_2 from './assets/heart/4협탁.jpg';
+import imagePath4_2 from './assets/heart/4sidetable.jpg';
 
 
 

@@ -4,45 +4,50 @@ import { useState } from 'react';
 import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'
 
-function MainScreen({navigation})  {
+function MainScreen({ navigation }) {
 
   const [count, setCount] = useState(null);
 
-    return (
-  <View style={styles.container}>
-        
-    <View style={styles.header}>
-      <Text style={{fontWeight:'900',fontSize:45, color:"#6fbbf2",marginTop:235,}}>Reco</Text>
+  return (
+    <View style={styles.container}>
+
+      <View style={styles.header}>
+        <Text style={{ fontWeight: '900', fontSize: 45, color: "#6fbbf2", marginTop: 235, }}>Roombi.</Text>
       </View>
 
       <View style={styles.detail}>
-      <Text style={{fontWeight:'800',fontSize:14, color:"lightgrey",}}>
-        당신에게 필요한 맞춤 인테리어
-      </Text> 
-
+        <Text style={{ fontWeight: '800', fontSize: 14, color: "lightgrey", }}>
+          당신에게 필요한 맞춤 인테리어
+        </Text>
       </View>
 
       <View style={styles.one}>
-          <TextInput placeholder={'user name'} 
-          style={styles.input}/>
-          <TextInput placeholder={'password'} 
-          style={styles.input}/>
-        </View>
-      
-        <StatusBar style="auto" />
-
-        <TouchableOpacity onPress={() => navigation.navigate('budget',{click: count})} activeOpacity={0.6} style={{opacity:0.8, alignItems:'center'}}>
-           <LinearGradient
-             colors={['#81d8f6', '#62cef4', '#5fc7f1', '#6fbbf2', '#79b4f3', '#74a6f3']}
-             start={{ x: 0.0, y: 1.0 }} end={{ x: 1.0, y: 1.0 }}
-             style={{ height: 45, width: 325, borderRadius: 15, marginTop: 25, marginBottom:5 }}>
-              <Text style={{color:'white', fontSize:22, textAlign:'center', fontWeight:'900', marginTop:13,}}>로그인</Text>
-           </LinearGradient>
-        </TouchableOpacity>
+        <TextInput placeholder={'user name'}
+          style={styles.input} />
+        <TextInput placeholder={'password'}
+          style={styles.input} />
       </View>
-    );
-    
-}export default MainScreen;
+
+      <StatusBar style="auto" />
+
+      <TouchableOpacity onPress={() => navigation.navigate('budget', { click: count })} activeOpacity={0.6} style={{ opacity: 0.8, alignItems: 'center' }}>
+        <LinearGradient
+          colors={['#81d8f6', '#62cef4', '#5fc7f1', '#6fbbf2', '#79b4f3', '#74a6f3']}
+          start={{ x: 0.0, y: 1.0 }} end={{ x: 1.0, y: 1.0 }}
+          style={{ height: 45, width: 325, borderRadius: 15, marginTop: 25, marginBottom: 5 }}>
+          <Text style={{ color: 'white', fontSize: 22, textAlign: 'center', fontWeight: '900', marginTop: 13, }}>로그인</Text>
+        </LinearGradient>
+      </TouchableOpacity>
+
+      <View style={{ flexDirection: 'row',marginTop: 10, }}>
+        <Text style={{color:"#01A9DB", }}> 회원이 아니신가요?</Text>
+        <Text style={{color:"#01A9DB",fontWeight: 'bold',  }} onPress={() => navigation.navigate('budget')}>회원가입하기</Text>
+      </View>
+
+    </View>
+  );
+
+} export default MainScreen;
 
 
 
@@ -50,44 +55,44 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: '#fff',
-    paddingHorizontal:48,
+    paddingHorizontal: 48,
   },
   header: {
-    flexDirection:'column',
+    flexDirection: 'column',
     //alignItems:'center',
-    marginTop:12
-    },
-    detail: {
-      backgroundColor:"white",
-      flexDirection:'Low',
-      //alignItems:'center',
-      bordercolor:'black'
-    },
-  one:{
-    backgroundColor:'white',
-    alignItems:'center',
-    marginTop:60,
+    marginTop: 12
   },
-  input:{
-    backgroundColor:'#f4f4f4',
-    marginTop:10,
-    width:325,
-    height:45,
-    fontSize:16,
-    fontWeight:'600',
-    borderRadius:15,
-    textAlign:'center'
+  detail: {
+    backgroundColor: "white",
+    flexDirection: 'Low',
+    //alignItems:'center',
+    bordercolor: 'black'
+  },
+  one: {
+    backgroundColor: 'white',
+    alignItems: 'center',
+    marginTop: 60,
+  },
+  input: {
+    backgroundColor: '#f4f4f4',
+    marginTop: 10,
+    width: 325,
+    height: 45,
+    fontSize: 16,
+    fontWeight: '600',
+    borderRadius: 15,
+    textAlign: 'center'
   },
 
-  btn:{
-    flex:1,
-    backgroundColor:"#078C74",
+  btn: {
+    flex: 1,
+    backgroundColor: "#078C74",
     paddingVertical: 15,
-    marginLeft:10,
-    width:300,
-    borderRadius:15,
-    marginTop:10,
-   },
+    marginLeft: 10,
+    width: 300,
+    borderRadius: 15,
+    marginTop: 10,
+  },
 
-  
+
 });

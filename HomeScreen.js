@@ -6,21 +6,21 @@ import { LinearGradient } from 'expo-linear-gradient'
 import chair from './assets/home/chair.png';
 import gear from './assets/home/gear.png';
 
-import imagePath1 from './assets/furniture/침대.jpg';
-import imagePath2 from './assets/furniture/책상.jpg';
-import imagePath3 from './assets/furniture/의자.jpg';
-import imagePath4 from './assets/furniture/소파.jpg';
-import imagePath5 from './assets/furniture/수납장.jpg';
-import imagePath6 from './assets/furniture/선반.jpg';
-import imagePath7 from './assets/furniture/옷장.jpg';
-import imagePath8 from './assets/furniture/조명.jpg';
-import imagePath9 from './assets/furniture/러그.jpg';
+import imagePath1 from './assets/furniture/bed.jpg';
+import imagePath2 from './assets/furniture/desk.jpg';
+import imagePath3 from './assets/furniture/chair.jpg';
+import imagePath4 from './assets/furniture/sofa.jpg';
+import imagePath5 from './assets/furniture/cabinet.jpg';
+import imagePath6 from './assets/furniture/shelf.jpg';
+import imagePath7 from './assets/furniture/closet.jpg';
+import imagePath8 from './assets/furniture/light.jpg';
+import imagePath9 from './assets/furniture/rug.jpg';
 
 
-import imagePath3_1 from './assets/heart/3테이블.jpg';
-import imagePath3_2 from './assets/heart/3의자.jpg';
-import imagePath3_3 from './assets/heart/3스탠드.jpg';
-import imagePath3_4 from './assets/heart/3식물.jpg';
+import imagePath3_1 from './assets/heart/3table.jpg';
+import imagePath3_2 from './assets/heart/3chair.jpg';
+import imagePath3_3 from './assets/heart/3light.jpg';
+import imagePath3_4 from './assets/heart/3plant.jpg';
 
 
 import monocle from './assets/home/monocle.png';
@@ -36,7 +36,7 @@ function MainScreen({navigation})  {
       <ScrollView showsVerticalScrollIndicator={false}>
 
       <View style={{marginTop:100,}}>
-        <Text style={{fontSize:35, fontWeight:"700", color:'#353535'}}>연세님</Text>
+        <Text style={{fontSize:35, fontWeight:"700", color:'#353535'}}>사용자님</Text>
         <Text style={{fontSize:35, fontWeight:"700", color:'#353535'}}>안녕하세요</Text>
       </View>
 
