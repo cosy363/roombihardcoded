@@ -7,19 +7,25 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { View, Text, Image, Button, StatusBar } from 'react-native';
 import { getFocusedRouteNameFromRoute} from '@react-navigation/native';
 
-import LoginScreen from './LoginScreen'; //0
-import BudgetScreen from './BudgetScreen'; //1
-import ColorScreen from './ColorScreen'; //2
-import StyleScreen from './StyleScreen'; //3
-import FurnitureScreen from './FurnitureScreen'; //4
+import LoginScreen from './LoginScreen'; 
+import BudgetScreen from './BudgetScreen'; 
+import ColorScreen from './ColorScreen'; 
+import StyleScreen from './StyleScreen'; 
+import FurnitureScreen from './FurnitureScreen'; 
 
-import HomeScreen from './HomeScreen'; //5
-import HeartScreen from './HeartScreen'; //6
-import MypageScreen from './MypageScreen'; //7
+import HomeScreen from './HomeScreen'; 
+import HeartScreen from './HeartScreen';
+import MypageScreen from './MypageScreen'; 
 
-import RcmdScreen from './RcmdScreen'; //8
-import ResetScreen from './ResetScreen'; //9
-import SignupScreen from './signupScreen'; //10
+import RcmdScreen from './RcmdScreen'; 
+import ResetScreen from './ResetScreen';
+import SignupScreen from './signupScreen';
+import SettingScreen from './SettingScreen';
+
+import BudgetScreen_2 from './BudgetScreen_2'; 
+import ColorScreen_2 from './ColorScreen_2'; 
+import FurnitureScreen_2 from './FurnitureScreen_2'; 
+
 
 
 const Stack = createStackNavigator();
@@ -58,11 +64,32 @@ function App({navigation}){
           headerShown:false,
         }}
         />
+        <Stack.Screen name="setting" component={SettingScreen}
+        options={{
+          headerShown:false,
+        }}
+        />
+        <Stack.Screen name="budget2" component={BudgetScreen_2}
+        options={{
+          headerShown:false,
+        }}
+        />
+        <Stack.Screen name="color2" component={ColorScreen_2}
+        options={{
+          headerShown:false,
+        }}
+        />
+        <Stack.Screen name="furniture2" component={FurnitureScreen_2}
+        options={{
+          headerShown:false,
+        }}
+        />
         <Stack.Screen name="main" component={Root}
         options={{
           headerShown:false,
         }}
         />
+
       </Stack.Navigator>
     </NavigationContainer>
   )
@@ -142,6 +169,7 @@ function HomeStackScreen({navigation}){
         <Stack.Screen name="rcmd" component={RcmdScreen}
         options={{
           title:'',
+          headerShown:false,
           headerLeft:()=>
             <View>
               <Entypo name="chevron-left" size={24} color="#424242" style={{marginLeft:20, marginBottom:5,}} />

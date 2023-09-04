@@ -27,7 +27,7 @@ function MainScreen({ route })  {
 
           <View style={{height:1,backgroundColor:'#F2F2F2',marginLeft:30, marginRight:30, marginTop:20,}}></View>
 
-
+{/* 
           <View style={styles.scd}>
 
           <View style={{flexDirection:'row',marginTop:28}}>
@@ -42,7 +42,7 @@ function MainScreen({ route })  {
           </View>
 
 
-        </View>
+        </View> */}
 
 
         </View>

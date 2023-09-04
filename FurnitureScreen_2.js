@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
-import { Button, StyleSheet, Text, View, Image, navigation, TouchableOpacity } from 'react-native';
+import { Button, StyleSheet, Text, View, Image, navigation, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'
 
 import imagePath1 from './assets/furniture/bed.jpg';
@@ -55,6 +55,21 @@ function MainScreen({ navigation }) {
   const toggleOverlay9 = () => {
     setOverlay9(!overlay9);
   }
+
+  const saveItem = () => {
+    Alert.alert(
+    "저장",
+    "저장되었습니다!",
+    [
+      {
+        text: "확인",
+        onPress: () => console.log("저장완료"),
+      },
+    ],
+    { cancelable: false }
+    );
+  };
+
 
   return (
 
@@ -144,12 +159,12 @@ function MainScreen({ navigation }) {
       </View>
 
       <View style={{ alignItems: 'flex-end', marginTop: 80, }}>
-        <TouchableOpacity onPress={() => navigation.navigate('main')} activeOpacity={0.5} style={{ opacity: 0.7 }}>
+        <TouchableOpacity onPress={() => saveItem()} activeOpacity={0.5} style={{ opacity: 0.7 }}>
           <LinearGradient
             colors={['#81d8f6', '#62cef4', '#5fc7f1', '#6fbbf2', '#79b4f3', '#74a6f3']}
             start={{ x: 0.0, y: 1.0 }} end={{ x: 1.0, y: 1.0 }}
             style={{ height: 47, width: 100, borderRadius: 15, marginTop: 10, marginBottom: 5 }}>
-            <Text style={{ color: 'white', fontSize: 18, textAlignVertical: "center", textAlign: 'center', fontWeight: '900', marginTop: 15, }}>다음으로</Text>
+            <Text style={{ color: 'white', fontSize: 18, textAlignVertical: "center", textAlign: 'center', fontWeight: '900', marginTop: 15, }}>저장하기</Text>
           </LinearGradient>
         </TouchableOpacity>
       </View>
