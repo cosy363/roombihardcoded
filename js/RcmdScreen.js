@@ -27,6 +27,19 @@ function MainScreen({ navigation }) {
     );
   };
 
+  const [refreshing, setRefreshing] = useState(false);
+  
+  const onRefresh = () => {
+    setRefreshing(true);
+
+    // 1초 후에 RefreshControl를 비활성화합니다.
+    setTimeout(() => {
+      setRefreshing(false);
+    }, 1000);
+
+    // 여기에서 추가적인 작업을 수행할 수 있습니다.
+  };
+
   return (
 
     <View style={styles.container}>
@@ -38,8 +51,13 @@ function MainScreen({ navigation }) {
         <Text style={styles.askcolor}>추천 인테리어입니다</Text>
       </View>
 
-      <ScrollView refreshControl={<RefreshControl/>}>
-
+      <ScrollView refreshControl={
+          <RefreshControl
+            refreshing={refreshing}
+            onRefresh={onRefresh}
+          />
+        }
+      >
         <View style={styles.day}>
           <Image style={styles.image} source={desk} />
           <View style={{ flexDirection: "column" }}>

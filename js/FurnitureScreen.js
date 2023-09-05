@@ -21,13 +21,13 @@ function MainScreen({ navigation }) {
 
   useEffect(() => {
     setTimeout(() => {
-      setProgressValue(0.5);
+      setProgressValue(0.6);
     }, 0); // 1초 후에 0.3으로 변경 (원하는 시간으로 조절 가능)
   }, []); // 빈 배열을 두어 한 번만 실행되도록 설정
 
   useEffect(() => {
     setTimeout(() => {
-      setProgressValue(0.75);
+      setProgressValue(0.9);
     }, 100); // 1초 후에 0.3으로 변경 (원하는 시간으로 조절 가능)
   }, []); // 빈 배열을 두어 한 번만 실행되도록 설정
   
@@ -75,7 +75,7 @@ function MainScreen({ navigation }) {
 
     <View style={styles.container}>
       <Progress.Bar progress={progressValue} width={330} color="#99bdef" style={{ marginTop: 100 }} />
-
+      <Text style={{ textAlign:'center', marginTop:5, fontSize:12, color:"#99bdef" }} >90%</Text>
 
       <View style={styles.ask1}>
         <Text style={styles.askcolor}>추천받을 가구 4개를</Text>
