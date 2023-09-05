@@ -3,6 +3,9 @@ import { StyleSheet, Text, View, Image,TouchableOpacity} from 'react-native';
 import { Feather, Ionicons } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient'
 
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 import share from '../assets/mypage/list.png';
 import shopping from '../assets/mypage/shopping.png';

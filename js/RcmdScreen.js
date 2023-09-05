@@ -4,6 +4,10 @@ import { StatusBar } from 'expo-status-bar';
 import { Alert, StyleSheet, Text, RefreshControl, View, ScrollView, Image, navigation, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
 
 import desk from '../assets/rcmd/1desk.jpg';
 import closet from '../assets/rcmd/1sidetable.jpg';
@@ -28,11 +32,10 @@ function MainScreen({ navigation }) {
   };
 
   const [refreshing, setRefreshing] = useState(false);
-  
+
   const onRefresh = () => {
     setRefreshing(true);
 
-    // 1초 후에 RefreshControl를 비활성화합니다.
     setTimeout(() => {
       setRefreshing(false);
     }, 1000);
@@ -47,7 +50,7 @@ function MainScreen({ navigation }) {
       <StatusBar style="block"></StatusBar>
 
       <View style={styles.ask1}>
-        <Text style={styles.askcolor}>user님만을 위한</Text>
+        <Text style={styles.askcolor}>Username님만을 위한</Text>
         <Text style={styles.askcolor}>추천 인테리어입니다</Text>
       </View>
 
@@ -109,9 +112,6 @@ function MainScreen({ navigation }) {
         </TouchableOpacity>
 
       </View>
-
-
-
 
     </View>
 

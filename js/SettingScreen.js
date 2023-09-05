@@ -3,6 +3,10 @@ import { Button, StyleSheet, Text, Dimensions, View, ScrollView, Image, navigati
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient'
 
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
 import chair from '../assets/home/chair.png';
 import gear from '../assets/home/gear.png';
 import money from '../assets/home/money.png';

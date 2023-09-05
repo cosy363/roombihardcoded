@@ -3,8 +3,13 @@ import { Button, StyleSheet, Text, Dimensions, View, ScrollView, Image, navigati
 import { AntDesign, Entypo } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient'
 
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
 import chair from '../assets/home/chair.png';
 import gear from '../assets/home/gear.png';
+import party from '../assets/home/party.png';
 import monocle from '../assets/home/monocle.png';
 
 import imagePath1 from '../assets/furniture/bed.jpg';
@@ -30,7 +35,7 @@ function MainScreen({ navigation }) {
       <ScrollView showsVerticalScrollIndicator={false}>
 
         <View style={{ marginTop: 110, marginLeft: 10}}>
-          <Text style={{ fontSize: 28, fontWeight: "700", color: '#353535' }}>사용자님</Text>
+          <Text style={{ fontSize: 28, fontWeight: "700", color: '#353535' }}>Username님</Text>
           <Text style={{ fontSize: 28, fontWeight: "700", color: '#353535' }}>안녕하세요</Text>
         </View>
 

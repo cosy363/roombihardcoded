@@ -4,6 +4,10 @@ import { StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import * as Progress from 'react-native-progress';
 import { LinearGradient } from 'expo-linear-gradient'
 
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
 
 import wood from '../assets/color/wood.jpg';
 

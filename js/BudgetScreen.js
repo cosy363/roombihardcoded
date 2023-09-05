@@ -2,12 +2,18 @@ import React, { useEffect, useState } from 'react';
 import { StyleSheet, Text, View, TextInput, TouchableOpacity } from 'react-native';
 import * as Progress from 'react-native-progress';
 import { LinearGradient } from 'expo-linear-gradient';
+import * as Animatable from 'react-native-animatable';
+
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
 
 function MainScreen({ navigation }) {
   const [progressValue, setProgressValue] = useState(0);
   const [inputText, setInputText] = useState('');
   const [isInputEmpty, setIsInputEmpty] = useState(true);
   const [showErrorMessage, setShowErrorMessage] = useState(false);
+  const [errorViewRef, setErrorViewRef] = useState(null); // Add this state
 
   useEffect(() => {
     setTimeout(() => {
@@ -21,7 +27,7 @@ function MainScreen({ navigation }) {
       setShowErrorMessage(false);
     }
   }, [inputText]);
-  
+
 
   // TouchableOpacity를 눌렀을 때 호출되는 함수
   const handleNextPress = () => {
@@ -48,10 +54,14 @@ function MainScreen({ navigation }) {
         <Text style={styles.askcolor}>알려주세요</Text>
       </View>
 
-      <View style={{ flexDirection: "row" }}>
+      <Animatable.View
+        ref={setErrorViewRef}
+        style={{ flexDirection: 'row', alignItems: 'center' }}
+        animation={showErrorMessage ? 'shake' : undefined} // Apply the "shake" animation when there's an error
+      >
         <TextInput
           style={styles.textInput}
-          keyboardType='numeric'
+          keyboardType="numeric"
           returnKeyType="done"
           placeholder="250,000"
           onChangeText={(text) => {
@@ -59,9 +69,10 @@ function MainScreen({ navigation }) {
             setIsInputEmpty(text.trim() === '');
           }}
         />
-        <Text style={{ fontSize: 38, color: "#ACABAB", marginTop: 36.5, fontWeight: "400", marginLeft: 10 }}>원</Text>
-      </View>
-      <View style={styles.box2}></View>
+        <Text style={{ fontSize: 38, color: '#BDBDBD', marginTop: 31, fontWeight: '400', marginLeft: 10 }}>
+          원
+        </Text>
+      </Animatable.View>
 
       {showErrorMessage && (
         <Text style={{ marginTop: 5, fontSize: 15, color: 'red' }}>입력값이 비어있습니다</Text>

@@ -4,6 +4,10 @@ import { StatusBar } from 'expo-status-bar';
 import { Button, StyleSheet, Text, Dimensions, View, ScrollView, Image, navigation, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
 
 import desk from '../assets/rcmd/1desk.jpg';
 import closet from '../assets/rcmd/1sidetable.jpg';

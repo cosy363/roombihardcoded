@@ -7,6 +7,10 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { View, Text, Image, Button, StatusBar } from 'react-native';
 import { getFocusedRouteNameFromRoute} from '@react-navigation/native';
 
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
 import LoginScreen from './LoginScreen'; 
 import BudgetScreen from './BudgetScreen'; 
 import ColorScreen from './ColorScreen'; 
@@ -26,7 +30,10 @@ import BudgetScreen_2 from './BudgetScreen_2';
 import ColorScreen_2 from './ColorScreen_2'; 
 import FurnitureScreen_2 from './FurnitureScreen_2'; 
 
-//일단은 ignore 해놓자... 왜 자꾸 오류뜨냐 빡치게
+import RegisterScreen from './RegisterScreen'; 
+import PasswordScreen from './PasswordScreen'; 
+
+//일단은 ignore 해놓기
 import { LogBox } from 'react-native';
 LogBox.ignoreLogs(['Sending']);
 
@@ -82,6 +89,16 @@ function App({navigation}){
         }}
         />
         <Stack.Screen name="furniture2" component={FurnitureScreen_2}
+        options={{
+          headerShown:false,
+        }}
+        />
+        <Stack.Screen name="register" component={RegisterScreen}
+        options={{
+          headerShown:false,
+        }}
+        />
+        <Stack.Screen name="password" component={PasswordScreen}
         options={{
           headerShown:false,
         }}

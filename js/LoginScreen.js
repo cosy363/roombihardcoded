@@ -4,6 +4,10 @@ import { useState } from 'react';
 import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'
 
+import { Amplify, Auth } from 'aws-amplify';
+import awsconfig from './aws-exports';
+Amplify.configure(awsconfig);
+
 function MainScreen({ navigation }) {
 
   const [count, setCount] = useState(null);
@@ -22,7 +26,7 @@ function MainScreen({ navigation }) {
       </View>
 
       <View style={styles.one}>
-        <TextInput placeholder={'user name'}
+        <TextInput placeholder={'Username'}
           style={styles.input} />
         <TextInput placeholder={'password'}
           style={styles.input} />
@@ -41,11 +45,11 @@ function MainScreen({ navigation }) {
 
       <View style={{ flexDirection: 'row',marginTop: 40, }}>
         <Text style={{color:"grey", }}>회원이 아니신가요?</Text>
-        <Text style={{color:"#01A9DB",fontWeight: 'bold',  }} onPress={() => navigation.navigate('budget')}> 회원가입 하기</Text>
+        <Text style={{color:"#01A9DB",fontWeight: 'bold',  }} onPress={() => navigation.navigate('register')}> 회원가입 하기</Text>
       </View>
       <View style={{ flexDirection: 'row',marginTop: 5, }}>
         <Text style={{color:"grey", }}>비밀번호를 잊으셨나요?</Text>
-        <Text style={{color:"#01A9DB",fontWeight: 'bold',  }} onPress={() => navigation.navigate('budget')}> 비밀번호 찾기</Text>
+        <Text style={{color:"#01A9DB",fontWeight: 'bold',  }} onPress={() => navigation.navigate('password')}> 비밀번호 찾기</Text>
       </View>
 
     </View>
