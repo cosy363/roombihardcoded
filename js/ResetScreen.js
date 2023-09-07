@@ -3,10 +3,6 @@ import { StatusBar } from 'expo-status-bar';
 import { useState } from 'react';
 import { Button, StyleSheet, Text, View, Image, navigation, TouchableOpacity } from 'react-native';
 
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
-
 import imagePath1 from '../assets/furniture/bed.jpg';
 import imagePath2 from '../assets/furniture/desk.jpg';
 import imagePath3 from '../assets/furniture/chair.jpg';

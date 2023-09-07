@@ -4,9 +4,6 @@ import * as Progress from 'react-native-progress';
 import { LinearGradient } from 'expo-linear-gradient';
 import * as Animatable from 'react-native-animatable';
 
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
 
 function MainScreen({ navigation }) {
   const [progressValue, setProgressValue] = useState(0);

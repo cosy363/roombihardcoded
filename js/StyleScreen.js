@@ -3,10 +3,6 @@ import { useState } from 'react';
 import { Button, StyleSheet, Text, View, Image, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'
 
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
-
 import natural from '../assets/style/natural.png';
 import modern from '../assets/style/modern.jpg';
 import romantic from '../assets/style/romantic.jpg';

@@ -7,10 +7,6 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 import { View, Text, Image, Button, StatusBar } from 'react-native';
 import { getFocusedRouteNameFromRoute} from '@react-navigation/native';
 
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
-
 import LoginScreen from './LoginScreen'; 
 import BudgetScreen from './BudgetScreen'; 
 import ColorScreen from './ColorScreen'; 

@@ -1,31 +1,11 @@
 import React, { Component } from 'react';
-import { Button, StyleSheet, Text, Dimensions, View, ScrollView, Image, navigation, TouchableOpacity } from 'react-native';
+import { StyleSheet, Text, View, ScrollView, Image, TouchableOpacity } from 'react-native';
 import { AntDesign, Entypo } from '@expo/vector-icons';
-import { LinearGradient } from 'expo-linear-gradient'
-
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
 
 import chair from '../assets/home/chair.png';
-import gear from '../assets/home/gear.png';
-import party from '../assets/home/party.png';
-import monocle from '../assets/home/monocle.png';
-
-import imagePath1 from '../assets/furniture/bed.jpg';
-import imagePath2 from '../assets/furniture/desk.jpg';
-import imagePath3 from '../assets/furniture/chair.jpg';
-import imagePath4 from '../assets/furniture/sofa.jpg';
-import imagePath5 from '../assets/furniture/cabinet.jpg';
-import imagePath6 from '../assets/furniture/shelf.jpg';
-import imagePath7 from '../assets/furniture/closet.jpg';
-import imagePath8 from '../assets/furniture/light.jpg';
-import imagePath9 from '../assets/furniture/rug.jpg';
-
-import imagePath3_1 from '../assets/heart/3table.jpg';
-import imagePath3_2 from '../assets/heart/3chair.jpg';
-import imagePath3_3 from '../assets/heart/3light.jpg';
-import imagePath3_4 from '../assets/heart/3plant.jpg';
+import money from '../assets/home/money.png';
+import palette from '../assets/home/palette.png';
+import bed from '../assets/home/bed.png';
 
 function MainScreen({ navigation }) {
 
@@ -34,9 +14,9 @@ function MainScreen({ navigation }) {
 
       <ScrollView showsVerticalScrollIndicator={false}>
 
-        <View style={{ marginTop: 110, marginLeft: 10}}>
-          <Text style={{ fontSize: 28, fontWeight: "700", color: '#353535' }}>Username님</Text>
-          <Text style={{ fontSize: 28, fontWeight: "700", color: '#353535' }}>안녕하세요</Text>
+        <View style={{ marginTop: 110, marginLeft: 10, }}>
+          <Text style={styles.hello}>Username님</Text>
+          <Text style={styles.hello}>안녕하세요</Text>
         </View>
 
         <TouchableOpacity style={{ backgroundColor: "white", width: 360, height: 190, marginTop: 30, borderRadius: 30, }}
@@ -57,66 +37,60 @@ function MainScreen({ navigation }) {
         </TouchableOpacity>
 
 
+        <View style={{ marginTop: 30, marginLeft: 10}}>
+          <Text style={{ fontSize: 20, fontWeight: "700", color: '#353535' }}>설정 변경</Text>
+        </View>
 
-        <TouchableOpacity style={{ backgroundColor: "white", width: 360, height: 100, marginTop: 15, borderRadius: 30, }}
-          onPress={() => navigation.navigate('setting')} activeOpacity={0.5}>
+
+        <TouchableOpacity style={[styles.set_background, {marginTop:18}]}
+          onPress={() => navigation.navigate('budget2')} activeOpacity={0.5}>
 
           <View style={{ flexDirection: 'row', marginTop: 15}}>
-            <View style={{ backgroundColor: '#f7f7f7', width: 70, height: 70, marginLeft: 25, borderRadius: 50, alignItems: 'center', justifyContent: 'center' }}>
-              <Image source={gear} style={{ width: 41, height: 41, }} />
+            <View style={styles.set_circle_background}>
+              <Image source={money} style={{ width: 41, height: 41, }} />
             </View>
 
             <View>
-              <Text style={{ fontSize: 19, fontWeight: '700', marginLeft: 15, marginTop: 25}}>설정 변경</Text>
+              <Text style={styles.set_main_text}>예산 </Text>
+              <Text style={styles.set_side_text}>300,000원</Text>
             </View>
           </View>
           
         </TouchableOpacity>
 
 
+        <TouchableOpacity style={styles.set_background}
+          onPress={() => navigation.navigate('color2')} activeOpacity={0.5}>
 
-
-
-        {/* 
-        INTP이시네요 주석
-
-        <View style={{flexDirection:'row'}}>
-         <Text style={{fontSize:30 , fontWeight:'700', marginLeft:10, marginTop:45, color:'#353535'}}>INTP시군요?</Text>
-         <Image source={monocle} style={{width:30, height:30, marginLeft:5, marginTop:45}}/>
-        </View>
-
-
-        <View style={{backgroundColor:"white", width:360, height:180, marginTop:15, borderRadius:30,}}>
-          <Text style={{fontSize:24, fontWeight:'700', marginLeft:25, marginVertical:25,}}>인팁이 가장 선호하는</Text>
-
-          <View style={{flexDirection:'row', marginTop:10,}}>
-            <View style={{backgroundColor:'white', width:58, height:58, marginLeft:33, borderRadius:50, alignItems:'center', justifyContent:'center'}}>
-              <Image source={imagePath3_1} style={{width:45, height:45,}}/>
-              <Text style={{marginTop:2, fontWeight:"700", fontSize:15,}}>IKEA</Text>
-              <Text style={{marginTop:1, fontWeight:"600", fontSize:12,}}>테이블</Text>
-            </View>
-            <View style={{backgroundColor:'white', width:58, height:58, marginLeft:18, borderRadius:50, alignItems:'center', justifyContent:'center'}}>
-              <Image source={imagePath3_2} style={{width:45, height:39,}}/>
-              <Text style={{marginTop:5, fontWeight:"700", fontSize:15,}}>IKEA</Text>
-              <Text style={{marginTop:1, fontWeight:"600", fontSize:12,}}>의자</Text>
-            </View>
-            <View style={{backgroundColor:'white', width:58, height:58, marginLeft:18, borderRadius:50, alignItems:'center', justifyContent:'center'}}>
-              <Image source={imagePath3_3} style={{width:45, height:39,}}/>
-              <Text style={{marginTop:5, fontWeight:"700", fontSize:15,}}>IKEA</Text>
-              <Text style={{marginTop:1, fontWeight:"600", fontSize:12,}}>조명</Text>
-            </View>
-            <View style={{backgroundColor:'white', width:58, height:58, marginLeft:18, borderRadius:50, alignItems:'center', justifyContent:'center'}}>
-              <Image source={imagePath3_4} style={{width:55, height:39,}}/>
-              <Text style={{marginTop:5, fontWeight:"700", fontSize:15,}}>IKEA</Text>
-              <Text style={{marginTop:1, fontWeight:"600", fontSize:12,}}>식물</Text>
+          <View style={{ flexDirection: 'row', marginTop: 15}}>
+            <View style={styles.set_circle_background}>
+              <Image source={palette} style={{ width: 41, height: 41, }} />
             </View>
 
+            <View>
+              <Text style={styles.set_main_text}>색 / 재질</Text>
+              <Text style={styles.set_side_text}>레드 그린 우드</Text>
+            </View>
           </View>
-        </View> */}
+          
+        </TouchableOpacity>
+
+        <TouchableOpacity style={[styles.set_background, {marginBottom:50,}]}
+          onPress={() => navigation.navigate('furniture2')} activeOpacity={0.5}>
+
+          <View style={{ flexDirection: 'row', marginTop: 15}}>
+            <View style={styles.set_circle_background}>
+              <Image source={bed} style={{ width: 41, height: 41, }} />
+            </View>
+
+            <View>
+              <Text style={styles.set_main_text}>가구 </Text>
+              <Text style={styles.set_side_text}>침대 책상 의자 소파</Text>
+            </View>
+          </View>
+        </TouchableOpacity>
 
       </ScrollView>
-
-
     </View>
 
   );
@@ -133,6 +107,21 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
     marginTop: 160,
+  },
+  hello: {
+    fontSize: 22, fontWeight: "700", color: '#353535'
+  },
+  set_background: {
+    backgroundColor: "white", width: 360, height: 100, marginTop: 15, borderRadius: 30
+  },
+  set_circle_background: {
+    backgroundColor: '#f7f7f7', width: 70, height: 70, marginLeft: 25, borderRadius: 50, alignItems: 'center', justifyContent: 'center' 
+  },
+  set_main_text:{
+    fontSize: 20, fontWeight: '700', marginLeft: 15, marginTop: 15
+  },
+  set_side_text:{
+    fontSize: 13, fontWeight: '300', marginLeft: 15
   },
   category: {
     marginTop: 15,

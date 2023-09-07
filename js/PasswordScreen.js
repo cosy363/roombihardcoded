@@ -4,10 +4,6 @@ import { useState } from 'react';
 import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'
 
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
-
 function MainScreen({ navigation }) {
 
     const [count, setCount] = useState(null);

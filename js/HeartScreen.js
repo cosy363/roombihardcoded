@@ -6,10 +6,6 @@ import { AntDesign } from '@expo/vector-icons';
 import { Entypo } from '@expo/vector-icons'; 
 import { Ionicons } from '@expo/vector-icons';
 
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
-
 import chair from '../assets/heart/chair.webp';
 
 import imagePath1 from '../assets/heart/bed.jpg';

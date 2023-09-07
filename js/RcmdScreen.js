@@ -4,11 +4,6 @@ import { StatusBar } from 'expo-status-bar';
 import { Alert, StyleSheet, Text, RefreshControl, View, ScrollView, Image, navigation, TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons';
 
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
-
-
 import desk from '../assets/rcmd/1desk.jpg';
 import closet from '../assets/rcmd/1sidetable.jpg';
 import stand from '../assets/rcmd/1light.jpg';
@@ -19,15 +14,15 @@ function MainScreen({ navigation }) {
 
   const saveItem = () => {
     Alert.alert(
-    "추가",
-    "찜 목록에 추가되었습니다!",
-    [
-      {
-        text: "확인",
-        onPress: () => console.log("추가완료"),
-      },
-    ],
-    { cancelable: false }
+      "추가",
+      "찜 목록에 추가되었습니다!",
+      [
+        {
+          text: "확인",
+          onPress: () => console.log("추가완료"),
+        },
+      ],
+      { cancelable: false }
     );
   };
 
@@ -54,13 +49,12 @@ function MainScreen({ navigation }) {
         <Text style={styles.askcolor}>추천 인테리어입니다</Text>
       </View>
 
-      <ScrollView refreshControl={
-          <RefreshControl
-            refreshing={refreshing}
-            onRefresh={onRefresh}
-          />
-        }
-      >
+      <ScrollView showsVerticalScrollIndicator={false}
+      refreshControl={
+        <RefreshControl
+          refreshing={refreshing}
+          onRefresh={onRefresh}/>}>
+            
         <View style={styles.day}>
           <Image style={styles.image} source={desk} />
           <View style={{ flexDirection: "column" }}>
@@ -97,21 +91,21 @@ function MainScreen({ navigation }) {
           </View>
         </View>
 
+        <View style={{ flexDirection: 'row' }}>
+          <Text style={styles.price}>
+            <Text>total </Text>
+            <Text style={{ fontSize: 28, fontWeight: "900" }}>236,200</Text>
+          </Text>
+
+          <TouchableOpacity onPress={() => saveItem()}>
+            <AntDesign name="heart" size={35} color="#FA5882" style={{ marginTop: 30, marginLeft: 90, }} />
+          </TouchableOpacity>
+        </View>
+
 
       </ScrollView>
 
-      <View style={{ flexDirection: 'row' }}>
 
-        <Text style={styles.price}>
-          <Text>total </Text>
-          <Text style={{ fontSize: 28, fontWeight: "900" }}>236,200</Text>
-        </Text>
-
-        <TouchableOpacity onPress={() => saveItem()}>
-          <AntDesign name="heart" size={35} color="#FA5882" style={{marginTop:30, marginLeft:100, }} />
-        </TouchableOpacity>
-
-      </View>
 
     </View>
 
@@ -123,7 +117,7 @@ function MainScreen({ navigation }) {
 
 const styles = StyleSheet.create({
   container: {
-    flex:1,
+    flex: 1,
     backgroundColor: "white"
   },
   ask1: {
@@ -150,9 +144,9 @@ const styles = StyleSheet.create({
   },
   price: {
     flexDirection: "row",
-    padding: 30,
+    padding: 25,
     fontSize: 20,
-    marginBottom: 40,
+    marginBottom: 50,
   },
   image: {
     marginLeft: 30,

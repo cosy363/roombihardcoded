@@ -4,17 +4,13 @@ import { useState } from 'react';
 import { View, Text, Button, StyleSheet, TextInput, TouchableOpacity } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'
 
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
-
 function MainScreen({ navigation }) {
 
   const [count, setCount] = useState(null);
 
   return (
     <View style={styles.container}>
-
+      <View style={styles.all}>
       <View style={styles.header}>
         <Text style={{ fontWeight: '900', fontSize: 45, color: "#6fbbf2", marginTop: 215, }}>Roombi.</Text>
       </View>
@@ -34,7 +30,7 @@ function MainScreen({ navigation }) {
 
       <StatusBar style="auto" />
 
-      <TouchableOpacity onPress={() => navigation.navigate('budget', { click: count })} activeOpacity={0.6} style={{ opacity: 0.8, alignItems: 'center' }}>
+      <TouchableOpacity onPress={() => navigation.navigate('budget', { click: count })} activeOpacity={0.6} style={{ opacity: 0.8 }}>
         <LinearGradient
           colors={['#81d8f6', '#62cef4', '#5fc7f1', '#6fbbf2', '#79b4f3', '#74a6f3']}
           start={{ x: 0.0, y: 1.0 }} end={{ x: 1.0, y: 1.0 }}
@@ -52,6 +48,10 @@ function MainScreen({ navigation }) {
         <Text style={{color:"#01A9DB",fontWeight: 'bold',  }} onPress={() => navigation.navigate('password')}> 비밀번호 찾기</Text>
       </View>
 
+
+      </View>
+
+      
     </View>
   );
 
@@ -62,8 +62,11 @@ function MainScreen({ navigation }) {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: '#fff',
-    paddingHorizontal: 48,
+    backgroundColor: '#FFFFFF',
+  },
+  all: {
+    backgroundColor: '#FFFFFF',
+    alignItems:'center'
   },
   header: {
     flexDirection: 'column',
@@ -78,7 +81,6 @@ const styles = StyleSheet.create({
   },
   one: {
     backgroundColor: 'white',
-    alignItems: 'center',
     marginTop: 60,
   },
   input: {

@@ -3,9 +3,6 @@ import { useState } from 'react';
 import { StyleSheet, Text, View, Image, TouchableOpacity, Alert } from 'react-native';
 import { LinearGradient } from 'expo-linear-gradient'
 
-import { Amplify, Auth } from 'aws-amplify';
-import awsconfig from './aws-exports';
-Amplify.configure(awsconfig);
 
 
 import wood from '../assets/color/wood.jpg';
